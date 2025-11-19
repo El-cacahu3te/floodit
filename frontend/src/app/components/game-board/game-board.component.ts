@@ -7,7 +7,8 @@ const blackFunc = constant('#000000');
 @Component({
   selector: 'app-game-board',
   templateUrl: './game-board.component.html',
-  styleUrls: ['./game-board.component.css']
+  styleUrls: ['./game-board.component.css'],
+  standalone: false
 })
 export class GameBoardComponent implements OnInit, OnChanges {
   @Input()

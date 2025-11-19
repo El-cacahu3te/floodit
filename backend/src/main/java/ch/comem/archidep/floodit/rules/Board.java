@@ -109,10 +109,10 @@ public class Board {
     var currentColor = this.colors[0][0];
     var newFlood = new HashSet<Position>();
     this.findAdjacentPositionsWithTheSameColor(
-        newFlood,
-        new Position(0, 0),
-        currentColor
-      );
+      newFlood,
+      new Position(0, 0),
+      currentColor
+    );
 
     newFlood.forEach(position ->
       this.colors[position.getColumn()][position.getRow()] = newColor
@@ -150,10 +150,10 @@ public class Board {
       .filter(this::isOnBoard)
       .forEach(newPosition ->
         this.findAdjacentPositionsWithTheSameColor(
-            accumulator,
-            newPosition,
-            color
-          )
+          accumulator,
+          newPosition,
+          color
+        )
       );
   }
 

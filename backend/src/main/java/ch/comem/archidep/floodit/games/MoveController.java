@@ -34,12 +34,12 @@ public class MoveController {
     @Valid @RequestBody PlayDto requestBody
   ) {
     return this.gameService.play(
-        authorizationHeader
-          .map(header -> header.replaceFirst("Bearer ", ""))
-          .orElseThrow(() ->
-            new ResponseStatusException(HttpStatus.UNAUTHORIZED)
-          ),
-        requestBody
-      );
+      authorizationHeader
+        .map(header -> header.replaceFirst("Bearer ", ""))
+        .orElseThrow(() ->
+          new ResponseStatusException(HttpStatus.UNAUTHORIZED)
+        ),
+      requestBody
+    );
   }
 }

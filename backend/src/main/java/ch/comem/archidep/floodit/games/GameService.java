@@ -120,12 +120,9 @@ public class GameService {
 
   private Game loadGame(Long gameId) {
     return this.gameRepository.findById(gameId).orElseThrow(() ->
-        new IllegalStateException(
-          String.format(
-            "Could not find game with ID %s in the database",
-            gameId
-          )
-        )
-      );
+      new IllegalStateException(
+        String.format("Could not find game with ID %s in the database", gameId)
+      )
+    );
   }
 }

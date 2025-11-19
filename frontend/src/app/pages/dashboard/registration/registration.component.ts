@@ -6,7 +6,8 @@ import { ProfileService } from 'src/app/profile/profile.service';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
+  standalone: false
 })
 export class RegistrationComponent {
   readonly profile: {

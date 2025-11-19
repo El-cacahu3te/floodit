@@ -15,7 +15,8 @@ enum State {
 @Component({
   selector: 'app-current-game',
   templateUrl: './current-game.component.html',
-  styleUrls: ['./current-game.component.css']
+  styleUrls: ['./current-game.component.css'],
+  standalone: false
 })
 export class CurrentGameComponent implements OnInit {
   state: State;

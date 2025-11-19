@@ -150,14 +150,12 @@ class GameServiceTests extends AbstractServiceTests {
 
   @Test
   void list_games() {
-    var gamePlayedTwoDaysAgo =
-      this.gameFixtures.game(builder ->
-          builder.withCreatedAt(LocalDateTime.now().minusDays(2))
-        );
-    var gamePlayedOneWeekAgo =
-      this.gameFixtures.game(builder ->
-          builder.withCreatedAt(LocalDateTime.now().minusWeeks(1))
-        );
+    var gamePlayedTwoDaysAgo = this.gameFixtures.game(builder ->
+      builder.withCreatedAt(LocalDateTime.now().minusDays(2))
+    );
+    var gamePlayedOneWeekAgo = this.gameFixtures.game(builder ->
+      builder.withCreatedAt(LocalDateTime.now().minusWeeks(1))
+    );
     var gamePlayedJustNow = this.gameFixtures.game();
 
     var result = this.gameService.listRecentGames();
@@ -195,14 +193,13 @@ class GameServiceTests extends AbstractServiceTests {
 
   @Test
   void get_the_board_of_a_game() {
-    var game =
-      this.gameFixtures.game(builder ->
-          builder
-            .withBoardWidth(3)
-            .withBoardHeight(3)
-            .withNumberOfColors(3)
-            .withSeed(42)
-        );
+    var game = this.gameFixtures.game(builder ->
+      builder
+        .withBoardWidth(3)
+        .withBoardHeight(3)
+        .withNumberOfColors(3)
+        .withSeed(42)
+    );
 
     var result = this.gameService.getGameBoard(game.getId());
 
@@ -285,15 +282,14 @@ class GameServiceTests extends AbstractServiceTests {
     // 2 2 2
     // 0 0 2
     // 0 1 1
-    var game =
-      this.gameFixtures.game(builder ->
-          builder
-            .withBoardWidth(3)
-            .withBoardHeight(3)
-            .withNumberOfColors(3)
-            .withMaxMoves(3)
-            .withSeed(42)
-        );
+    var game = this.gameFixtures.game(builder ->
+      builder
+        .withBoardWidth(3)
+        .withBoardHeight(3)
+        .withNumberOfColors(3)
+        .withMaxMoves(3)
+        .withSeed(42)
+    );
 
     // 0 0 0
     // 0 0 0
@@ -341,15 +337,14 @@ class GameServiceTests extends AbstractServiceTests {
     // 2 2 2
     // 0 0 2
     // 0 1 1
-    var game =
-      this.gameFixtures.game(builder ->
-          builder
-            .withBoardWidth(3)
-            .withBoardHeight(3)
-            .withNumberOfColors(3)
-            .withMaxMoves(3)
-            .withSeed(42)
-        );
+    var game = this.gameFixtures.game(builder ->
+      builder
+        .withBoardWidth(3)
+        .withBoardHeight(3)
+        .withNumberOfColors(3)
+        .withMaxMoves(3)
+        .withSeed(42)
+    );
 
     // 1 1 1
     // 0 0 1
@@ -416,12 +411,9 @@ class GameServiceTests extends AbstractServiceTests {
 
   private Game getGame(Long gameId) {
     return this.gameRepository.findById(gameId).orElseThrow(() ->
-        new IllegalStateException(
-          String.format(
-            "Could not find game with ID %s in the database",
-            gameId
-          )
-        )
-      );
+      new IllegalStateException(
+        String.format("Could not find game with ID %s in the database", gameId)
+      )
+    );
   }
 }

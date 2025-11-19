@@ -19,8 +19,8 @@ public abstract class AbstractControllerTests {
   protected ResultActions perform(MockHttpServletRequestBuilder builder)
     throws Exception {
     return this.mockMvc.perform(
-        builder.contentType(MediaType.APPLICATION_JSON)
-      );
+      builder.contentType(MediaType.APPLICATION_JSON)
+    );
   }
 
   protected String serialize(Object value) throws JsonProcessingException {

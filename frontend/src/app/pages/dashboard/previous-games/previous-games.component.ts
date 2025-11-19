@@ -12,7 +12,8 @@ enum State {
 @Component({
   selector: 'app-previous-games',
   templateUrl: './previous-games.component.html',
-  styleUrls: ['./previous-games.component.css']
+  styleUrls: ['./previous-games.component.css'],
+  standalone: false
 })
 export class PreviousGamesComponent implements OnInit {
   readonly games: Game[];

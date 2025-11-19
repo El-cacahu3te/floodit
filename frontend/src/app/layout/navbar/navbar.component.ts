@@ -6,7 +6,8 @@ import { ProfileService } from 'src/app/profile/profile.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  standalone: false
 })
 export class NavbarComponent {
   readonly profile$: Observable<Profile | undefined>;

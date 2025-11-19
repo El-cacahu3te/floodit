@@ -8,7 +8,8 @@ import { NavigationService } from 'src/app/navigation.service';
 @Component({
   selector: 'app-new-game-card',
   templateUrl: './new-game-card.component.html',
-  styleUrls: ['./new-game-card.component.css']
+  styleUrls: ['./new-game-card.component.css'],
+  standalone: false
 })
 export class NewGameCardComponent implements OnChanges {
   @Input()
