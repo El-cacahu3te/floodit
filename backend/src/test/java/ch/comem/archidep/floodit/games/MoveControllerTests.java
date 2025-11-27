@@ -18,17 +18,17 @@ import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpHeaders;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 @WebMvcTest(MoveController.class)
 class MoveControllerTests extends AbstractControllerTests {
 
-  @MockBean
+  @MockitoBean
   private GameRepository gameRepository;
 
-  @MockBean
+  @MockitoBean
   private GameService gameService;
 
   @AfterEach
